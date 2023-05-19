@@ -1,0 +1,8 @@
+prefix=/home/ypandos/work/rostest/install
+
+Name: ekf_rio
+Description: Description of ekf_rio
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lekf_rio
+Requires: message_runtime rosbag roscpp angles dynamic_reconfigure tf2_ros tf2_eigen rio_utils radar_ego_velocity_estimator

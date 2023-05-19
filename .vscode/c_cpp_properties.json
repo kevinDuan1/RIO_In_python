@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ypandos/work/rostest/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ypandos/work/rostest/src/ekf_rio/include/**",
+        "/home/ypandos/work/rostest/src/reve/radar_ego_velocity_estimator/include/**",
+        "/home/ypandos/work/rostest/src/rio_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

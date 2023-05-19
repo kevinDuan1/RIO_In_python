@@ -1,0 +1,6 @@
+devel_space: /home/ypandos/work/rostest/devel
+install: false
+install_space: /home/ypandos/work/rostest/install
+profile: default
+source_space: /home/ypandos/work/rostest/src
+workspace: /home/ypandos/work/rostest

@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/radar_ego_velocity_estimator/lib/pkgconfig/radar_ego_velocity_estimator.pc

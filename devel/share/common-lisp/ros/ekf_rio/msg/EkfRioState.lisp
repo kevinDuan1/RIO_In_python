@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/ekf_rio/share/common-lisp/ros/ekf_rio/msg/EkfRioState.lisp

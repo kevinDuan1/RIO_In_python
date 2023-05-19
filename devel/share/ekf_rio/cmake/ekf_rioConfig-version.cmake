@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/ekf_rio/share/ekf_rio/cmake/ekf_rioConfig-version.cmake

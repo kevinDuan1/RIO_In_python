@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/ekf_rio/share/gennodejs/ros/ekf_rio/_index.js

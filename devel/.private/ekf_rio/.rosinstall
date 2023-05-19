@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ypandos/work/rostest/devel/.private/ekf_rio/setup.sh

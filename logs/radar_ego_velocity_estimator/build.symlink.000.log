@@ -1,0 +1,16 @@
+Symlinking /home/ypandos/work/rostest/devel/lib/libradar_ego_velocity_estimator.so
+Symlinking /home/ypandos/work/rostest/devel/lib/libodrpack.so
+Symlinking /home/ypandos/work/rostest/devel/lib/radar_ego_velocity_estimator/radar_body_velocity_estimation_ros_node
+Symlinking /home/ypandos/work/rostest/devel/lib/radar_ego_velocity_estimator/radar_ego_velocity_estimation_rosbag_node
+Symlinking /home/ypandos/work/rostest/devel/lib/radar_ego_velocity_estimator/radar_ego_velocity_estimation_ros_node
+Symlinking /home/ypandos/work/rostest/devel/lib/radar_ego_velocity_estimator/radar_body_velocity_estimation_rosbag_node
+Symlinking /home/ypandos/work/rostest/devel/lib/pkgconfig/radar_ego_velocity_estimator.pc
+Symlinking /home/ypandos/work/rostest/devel/lib/python3/dist-packages/radar_ego_velocity_estimator/__init__.py
+Symlinking /home/ypandos/work/rostest/devel/lib/python3/dist-packages/radar_ego_velocity_estimator/cfg/__init__.py
+Symlinking /home/ypandos/work/rostest/devel/lib/python3/dist-packages/radar_ego_velocity_estimator/cfg/RadarEgoVelocityEstimatorConfig.py
+Symlinking /home/ypandos/work/rostest/devel/share/radar_ego_velocity_estimator/cmake/radar_ego_velocity_estimatorConfig-version.cmake
+Symlinking /home/ypandos/work/rostest/devel/share/radar_ego_velocity_estimator/cmake/radar_ego_velocity_estimatorConfig.cmake
+Symlinking /home/ypandos/work/rostest/devel/share/radar_ego_velocity_estimator/docs/RadarEgoVelocityEstimatorConfig.wikidoc
+Symlinking /home/ypandos/work/rostest/devel/share/radar_ego_velocity_estimator/docs/RadarEgoVelocityEstimatorConfig.dox
+Symlinking /home/ypandos/work/rostest/devel/share/radar_ego_velocity_estimator/docs/RadarEgoVelocityEstimatorConfig-usage.dox
+Symlinking /home/ypandos/work/rostest/devel/include/radar_ego_velocity_estimator/RadarEgoVelocityEstimatorConfig.h

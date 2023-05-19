@@ -1,0 +1,37 @@
+\subsubsection usage Usage
+\verbatim
+<node name="radar_ego_velocity_estimator" pkg="radar_ego_velocity_estimation" type="radar_ego_velocity_estimator">
+  <param name="min_dist" type="double" value="0.25" />
+  <param name="max_dist" type="double" value="100.0" />
+  <param name="min_db" type="double" value="5.0" />
+  <param name="elevation_thresh_deg" type="double" value="60.0" />
+  <param name="azimuth_thresh_deg" type="double" value="60.0" />
+  <param name="filter_min_z" type="double" value="-100.0" />
+  <param name="filter_max_z" type="double" value="100.0" />
+  <param name="doppler_velocity_correction_factor" type="double" value="1.0" />
+  <param name="thresh_zero_velocity" type="double" value="0.05" />
+  <param name="allowed_outlier_percentage" type="double" value="0.75" />
+  <param name="sigma_zero_velocity_x" type="double" value="0.01" />
+  <param name="sigma_zero_velocity_y" type="double" value="0.01" />
+  <param name="sigma_zero_velocity_z" type="double" value="0.01" />
+  <param name="sigma_offset_radar_x" type="double" value="0.0" />
+  <param name="sigma_offset_radar_y" type="double" value="0.0" />
+  <param name="sigma_offset_radar_z" type="double" value="0.0" />
+  <param name="max_sigma_x" type="double" value="0.1" />
+  <param name="max_sigma_y" type="double" value="0.1" />
+  <param name="max_sigma_z" type="double" value="0.9" />
+  <param name="max_r_cond" type="double" value="1000.0" />
+  <param name="use_cholesky_instead_of_bdcsvd" type="bool" value="True" />
+  <param name="use_ransac" type="bool" value="True" />
+  <param name="outlier_prob" type="double" value="0.4" />
+  <param name="success_prob" type="double" value="0.9999" />
+  <param name="N_ransac_points" type="int" value="3" />
+  <param name="inlier_thresh" type="double" value="0.15" />
+  <param name="use_odr" type="bool" value="True" />
+  <param name="min_speed_odr" type="double" value="4.0" />
+  <param name="sigma_v_d" type="double" value="0.125" />
+  <param name="model_noise_offset_deg" type="double" value="1.0" />
+  <param name="model_noise_scale_deg" type="double" value="1.0" />
+</node>
+\endverbatim
+

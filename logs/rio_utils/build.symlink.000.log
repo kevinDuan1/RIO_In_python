@@ -1,0 +1,4 @@
+Symlinking /home/ypandos/work/rostest/devel/lib/librio_utils.so
+Symlinking /home/ypandos/work/rostest/devel/lib/pkgconfig/rio_utils.pc
+Symlinking /home/ypandos/work/rostest/devel/share/rio_utils/cmake/rio_utilsConfig-version.cmake
+Symlinking /home/ypandos/work/rostest/devel/share/rio_utils/cmake/rio_utilsConfig.cmake

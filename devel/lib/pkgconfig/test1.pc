@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/test1/lib/pkgconfig/test1.pc

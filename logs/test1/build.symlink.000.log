@@ -1,0 +1,3 @@
+Symlinking /home/ypandos/work/rostest/devel/lib/pkgconfig/test1.pc
+Symlinking /home/ypandos/work/rostest/devel/share/test1/cmake/test1Config.cmake
+Symlinking /home/ypandos/work/rostest/devel/share/test1/cmake/test1Config-version.cmake

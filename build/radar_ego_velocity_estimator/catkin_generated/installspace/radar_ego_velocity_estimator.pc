@@ -1,0 +1,8 @@
+prefix=/home/ypandos/work/rostest/install
+
+Name: radar_ego_velocity_estimator
+Description: Description of radar_ego_velocity_estimator
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lradar_ego_velocity_estimator
+Requires: rosbag roscpp angles dynamic_reconfigure pcl_ros

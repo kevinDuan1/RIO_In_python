@@ -1,0 +1,1 @@
+/home/ypandos/work/rostest/devel/.private/ekf_rio/share/roseus/ros/ekf_rio/msg/EkfRioState.l

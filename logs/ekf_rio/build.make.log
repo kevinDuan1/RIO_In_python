@@ -1,0 +1,204 @@
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target _ekf_rio_generate_messages_check_deps_EkfRioCovariance[0m
+[35m[1mScanning dependencies of target _ekf_rio_generate_messages_check_deps_EkfRioState[0m
+[35m[1mScanning dependencies of target ekf_rio_gencfg[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_py[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target roscpp_generate_messages_eus[0m
+[  5%] [34m[1mGenerating dynamic reconfigure files from cfg/EkfRio.cfg: /home/ypandos/work/rostest/devel/.private/ekf_rio/include/ekf_rio/EkfRioConfig.h /home/ypandos/work/rostest/devel/.private/ekf_rio/lib/python3/dist-packages/ekf_rio/cfg/EkfRioConfig.py[0m
+[  5%] Built target sensor_msgs_generate_messages_py
+[  5%] Built target roscpp_generate_messages_py
+[  5%] Built target sensor_msgs_generate_messages_nodejs
+[  5%] Built target dynamic_reconfigure_generate_messages_py
+[  5%] Built target roscpp_generate_messages_nodejs
+[  5%] Built target geometry_msgs_generate_messages_nodejs
+[  5%] Built target std_msgs_generate_messages_nodejs
+[  5%] Built target std_msgs_generate_messages_py
+[  5%] Built target std_msgs_generate_messages_eus
+[  5%] Built target dynamic_reconfigure_generate_messages_nodejs
+[  5%] Built target roscpp_generate_messages_eus
+[35m[1mScanning dependencies of target tf_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_eus[0m
+[35m[1mScanning dependencies of target radar_ego_velocity_estimator_gencfg[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target tf_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target tf_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target pcl_msgs_generate_messages_lisp[0m
+[  5%] Built target tf_generate_messages_lisp
+[35m[1mScanning dependencies of target bond_generate_messages_py[0m
+[  5%] Built target dynamic_reconfigure_generate_messages_eus
+[  5%] Built target pcl_msgs_generate_messages_py
+[  5%] Built target tf_generate_messages_cpp
+[  5%] Built target tf_generate_messages_nodejs
+[  5%] Built target radar_ego_velocity_estimator_gencfg
+[  5%] Built target pcl_msgs_generate_messages_nodejs
+[  5%] Built target geometry_msgs_generate_messages_eus
+[  5%] Built target pcl_msgs_generate_messages_eus
+[  5%] Built target pcl_msgs_generate_messages_cpp
+[  5%] Built target pcl_msgs_generate_messages_lisp
+[  5%] Built target sensor_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target roscpp_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target bond_generate_messages_nodejs[0m
+[  5%] Built target bond_generate_messages_py
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target bond_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target bond_generate_messages_eus[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_cpp[0m
+[  5%] Built target _ekf_rio_generate_messages_check_deps_EkfRioCovariance
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[  5%] Built target _ekf_rio_generate_messages_check_deps_EkfRioState
+[  5%] Built target roscpp_generate_messages_cpp
+[  5%] Built target bond_generate_messages_nodejs
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
+[  5%] Built target dynamic_reconfigure_generate_messages_cpp
+[  5%] Built target geometry_msgs_generate_messages_cpp
+[  5%] Built target bond_generate_messages_lisp
+[  5%] Built target std_msgs_generate_messages_cpp
+[  5%] Built target bond_generate_messages_eus
+[  5%] Built target nodelet_generate_messages_nodejs
+[  5%] Built target roscpp_generate_messages_lisp
+[  5%] Built target sensor_msgs_generate_messages_lisp
+[  5%] Built target sensor_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target dynamic_reconfigure_generate_messages_lisp[0m
+[  5%] Built target std_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target pcl_ros_gencfg[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_cpp[0m
+[  5%] Built target geometry_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target nodelet_generate_messages_eus[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target topic_tools_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target nodelet_topic_tools_gencfg[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target tf_generate_messages_eus[0m
+[35m[1mScanning dependencies of target topic_tools_generate_messages_py[0m
+[  5%] Built target nodelet_generate_messages_cpp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_lisp[0m
+[  5%] Built target pcl_ros_gencfg
+[  5%] Built target nodelet_generate_messages_eus
+[  5%] Built target dynamic_reconfigure_generate_messages_lisp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_py[0m
+[  5%] Built target tf2_msgs_generate_messages_lisp
+[  5%] Built target tf2_msgs_generate_messages_nodejs
+[  5%] Built target topic_tools_generate_messages_nodejs
+[  5%] Built target nodelet_generate_messages_lisp
+[  5%] Built target actionlib_generate_messages_lisp
+[  5%] Built target tf2_msgs_generate_messages_eus
+[  5%] Built target nodelet_topic_tools_gencfg
+[  5%] Built target rosgraph_msgs_generate_messages_lisp
+[  5%] Built target topic_tools_generate_messages_py
+[  5%] Built target tf_generate_messages_eus
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target nodelet_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_py[0m
+[  5%] Built target rosgraph_msgs_generate_messages_py
+[35m[1mScanning dependencies of target std_srvs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target bond_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_nodejs[0m
+[  5%] Built target rosgraph_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target std_srvs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_srvs_generate_messages_eus[0m
+[  5%] Built target nodelet_generate_messages_py
+[  5%] Built target std_srvs_generate_messages_cpp
+[35m[1mScanning dependencies of target topic_tools_generate_messages_cpp[0m
+[  5%] Built target std_srvs_generate_messages_nodejs
+[  5%] Built target bond_generate_messages_cpp
+[  5%] Built target actionlib_msgs_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_nodejs
+[  5%] Built target tf2_msgs_generate_messages_py
+[  5%] Built target std_srvs_generate_messages_py
+[35m[1mScanning dependencies of target topic_tools_generate_messages_eus[0m
+[  5%] Built target tf2_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target dynamic_reconfigure_gencfg[0m
+[35m[1mScanning dependencies of target topic_tools_generate_messages_lisp[0m
+[  5%] Built target actionlib_generate_messages_cpp
+[  5%] Built target actionlib_msgs_generate_messages_py
+[  5%] Built target std_srvs_generate_messages_eus
+Generating reconfiguration files for EkfRio in ekf_rio
+[  5%] Built target std_srvs_generate_messages_lisp
+[  5%] Built target topic_tools_generate_messages_cpp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_eus[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_py[0m
+[35m[1mScanning dependencies of target tf_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target ekf_rio_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target ekf_rio_generate_messages_nodejs[0m
+[  5%] Built target topic_tools_generate_messages_lisp
+[35m[1mScanning dependencies of target ekf_rio_generate_messages_py[0m
+[  5%] Built target dynamic_reconfigure_gencfg
+[35m[1mScanning dependencies of target ekf_rio_generate_messages_eus[0m
+[35m[1mScanning dependencies of target ekf_rio_generate_messages_lisp[0m
+[  5%] Built target actionlib_generate_messages_eus
+[  5%] Built target rosgraph_msgs_generate_messages_cpp
+Wrote header file in /home/ypandos/work/rostest/devel/.private/ekf_rio/include/ekf_rio/EkfRioConfig.h
+[  5%] Built target actionlib_msgs_generate_messages_cpp
+[  5%] Built target actionlib_generate_messages_py
+[ 15%] [34m[1mGenerating Python from MSG ekf_rio/EkfRioState[0m
+[ 15%] [34m[1mGenerating Python from MSG ekf_rio/EkfRioCovariance[0m
+[ 15%] Built target topic_tools_generate_messages_eus
+[ 15%] Built target tf_generate_messages_py
+[ 15%] Built target actionlib_msgs_generate_messages_nodejs
+[ 20%] [34m[1mGenerating Javascript code from ekf_rio/EkfRioCovariance.msg[0m
+[ 25%] [34m[1mGenerating C++ code from ekf_rio/EkfRioState.msg[0m
+[ 30%] [34m[1mGenerating C++ code from ekf_rio/EkfRioCovariance.msg[0m
+[ 40%] [34m[1mGenerating Javascript code from ekf_rio/EkfRioState.msg[0m
+[ 40%] [34m[1mGenerating EusLisp code from ekf_rio/EkfRioCovariance.msg[0m
+[ 45%] [34m[1mGenerating Lisp code from ekf_rio/EkfRioCovariance.msg[0m
+[ 50%] [34m[1mGenerating Lisp code from ekf_rio/EkfRioState.msg[0m
+[ 50%] Built target actionlib_generate_messages_nodejs
+[ 60%] [34m[1mGenerating EusLisp manifest code for ekf_rio[0m
+[ 60%] [34m[1mGenerating EusLisp code from ekf_rio/EkfRioState.msg[0m
+[ 60%] Built target ekf_rio_gencfg
+[ 60%] Built target ekf_rio_generate_messages_nodejs
+[ 60%] Built target ekf_rio_generate_messages_lisp
+[ 60%] Built target ekf_rio_generate_messages_cpp
+[ 65%] [34m[1mGenerating Python msg __init__.py for ekf_rio[0m
+[ 65%] Built target ekf_rio_generate_messages_py
+[ 65%] Built target ekf_rio_generate_messages_eus
+[35m[1mScanning dependencies of target ekf_rio_generate_messages[0m
+[35m[1mScanning dependencies of target ekf_rio[0m
+[ 65%] Built target ekf_rio_generate_messages
+[ 75%] [32mBuilding CXX object CMakeFiles/ekf_rio.dir/src/ekf_rio_ros.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/ekf_rio.dir/src/ekf_rio_filter.cpp.o[0m
+[ 80%] [32m[1mLinking CXX shared library /home/ypandos/work/rostest/devel/.private/ekf_rio/lib/libekf_rio.so[0m
+[ 80%] Built target ekf_rio
+[35m[1mScanning dependencies of target rosbag_node[0m
+[35m[1mScanning dependencies of target ros_node[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/rosbag_node.dir/src/nodes/rosbag_node.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/ros_node.dir/src/nodes/ros_node.cpp.o[0m
+[ 95%] [32m[1mLinking CXX executable /home/ypandos/work/rostest/devel/.private/ekf_rio/lib/ekf_rio/ros_node[0m
+[100%] [32m[1mLinking CXX executable /home/ypandos/work/rostest/devel/.private/ekf_rio/lib/ekf_rio/rosbag_node[0m
+[100%] Built target ros_node
+[100%] Built target rosbag_node
