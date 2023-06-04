@@ -12,7 +12,7 @@ class Radar_ego_velocity_config:
         self.filter_min_z = -100 # -1000 to 1000
         self.filter_max_z = 100 # -1000 to 1000
         self.doppler_velocity_correction_factor = 1.0 #0 to 2
-        self.allowed_outlier_percentage = 0.75 # 0 to 1
+        self.allowed_outlier_percentage = 0.50 # 0 to 1
         self.thresh_zero_velocity = 0.05 #0 to 10
         self.sigma_zero_velocity_x = 0.01 # 0 to 10
         self.sigma_zero_velocity_y = 0.01 # 0 to 10

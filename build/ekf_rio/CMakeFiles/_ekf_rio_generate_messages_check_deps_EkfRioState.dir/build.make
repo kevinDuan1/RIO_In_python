@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ypandos/work/rostest/build/ekf_rio
 include CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioState.dir/progress.make
 
 CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioState:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ekf_rio /home/ypandos/work/rostest/src/ekf_rio/msg/EkfRioState.msg geometry_msgs/Vector3:geometry_msgs/Quaternion:std_msgs/Header
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ekf_rio /home/ypandos/work/rostest/src/ekf_rio/msg/EkfRioState.msg std_msgs/Header:geometry_msgs/Vector3:geometry_msgs/Quaternion
 
 _ekf_rio_generate_messages_check_deps_EkfRioState: CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioState
 _ekf_rio_generate_messages_check_deps_EkfRioState: CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioState.dir/build.make

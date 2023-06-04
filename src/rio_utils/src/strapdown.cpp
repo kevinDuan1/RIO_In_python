@@ -20,6 +20,7 @@
 
 namespace rio
 {
+  
 Strapdown::Strapdown(const double local_gravity) : local_gravity_(0, 0, local_gravity) {}
 
 NavigationSolution

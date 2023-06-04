@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ypandos/work/rostest/build/ekf_rio
 include CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioCovariance.dir/progress.make
 
 CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioCovariance:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ekf_rio /home/ypandos/work/rostest/src/ekf_rio/msg/EkfRioCovariance.msg geometry_msgs/Vector3:std_msgs/Header
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ekf_rio /home/ypandos/work/rostest/src/ekf_rio/msg/EkfRioCovariance.msg std_msgs/Header:geometry_msgs/Vector3
 
 _ekf_rio_generate_messages_check_deps_EkfRioCovariance: CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioCovariance
 _ekf_rio_generate_messages_check_deps_EkfRioCovariance: CMakeFiles/_ekf_rio_generate_messages_check_deps_EkfRioCovariance.dir/build.make

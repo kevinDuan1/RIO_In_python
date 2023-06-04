@@ -77,7 +77,6 @@ bool EkfRioFilter::propagate(const ImuDataStamped& imu)
 
   // TODO: consider more efficient implementation!!
   covariance_ = Phi * covariance_ * Phi.transpose() + G * system_noise_.getQ(imu.dt) * G.transpose();
-
   return true;
 }
 

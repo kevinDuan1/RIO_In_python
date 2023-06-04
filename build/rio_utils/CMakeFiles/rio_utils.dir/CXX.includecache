@@ -22,33 +22,11 @@ tf2/LinearMath/Matrix3x3.h
 tf2_eigen/tf2_eigen.h
 -
 
-/home/ypandos/work/rostest/src/rio_utils/include/rio_utils/simple_profiler.h
-string
--
-vector
--
-unordered_map
--
-map
--
-chrono
--
-yaml-cpp/yaml.h
--
-ros/console.h
--
-
 /home/ypandos/work/rostest/src/rio_utils/include/rio_utils/strapdown.h
 eigen3/Eigen/Dense
 -
 rio_utils/data_types.h
 /home/ypandos/work/rostest/src/rio_utils/include/rio_utils/rio_utils/data_types.h
-
-/home/ypandos/work/rostest/src/rio_utils/src/simple_profiler.cpp
-numeric
--
-rio_utils/simple_profiler.h
-/home/ypandos/work/rostest/src/rio_utils/src/rio_utils/simple_profiler.h
 
 /home/ypandos/work/rostest/src/rio_utils/src/strapdown.cpp
 rio_utils/strapdown.h
@@ -256,32 +234,6 @@ message_traits.h
 ros/time.h
 /opt/ros/noetic/include/ros/ros/time.h
 
-/opt/ros/noetic/include/ros/console.h
-console_backend.h
-/opt/ros/noetic/include/ros/console_backend.h
-cstdio
--
-sstream
--
-ros/time.h
--
-cstdarg
--
-ros/macros.h
--
-map
--
-vector
--
-log4cxx/level.h
-/opt/ros/noetic/include/ros/log4cxx/level.h
-rosconsole/macros_generated.h
-/opt/ros/noetic/include/ros/rosconsole/macros_generated.h
-
-/opt/ros/noetic/include/ros/console_backend.h
-ros/macros.h
--
-
 /opt/ros/noetic/include/ros/datatypes.h
 string
 -
@@ -421,8 +373,6 @@ sys/time.h
 /opt/ros/noetic/include/ros/types.h
 stdint.h
 -
-
-/opt/ros/noetic/include/rosconsole/macros_generated.h
 
 /opt/ros/noetic/include/sensor_msgs/Imu.h
 string

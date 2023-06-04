@@ -44,6 +44,6 @@ int main(int argc, char** argv)
   std::string rosbag_path = "";
   if (getRosParameter(nh, kPrefix, RosParameterType::Required, "rosbag_path", rosbag_path))
     estimator_ros.runFromRosbag(rosbag_path, bag_start, bag_duration, sleep_ms);
-
+    
   return 0;
 }

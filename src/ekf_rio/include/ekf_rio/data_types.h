@@ -110,8 +110,8 @@ struct SystemNoisePsd
 struct InitStruct
 {
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
-
   template <class Config>
+  
   bool configure(const EkfRioFilterStateIdx& error, Config& config)
   {
     p_0     = Vector3(config.p_0_x, config.p_0_y, config.p_0_z);

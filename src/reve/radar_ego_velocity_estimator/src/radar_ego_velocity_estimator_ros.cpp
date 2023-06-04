@@ -179,7 +179,6 @@ void RadarEgoVelocityEstimatorRos::callbackRadarScan(const sensor_msgs::PointClo
       ROS_ERROR_STREAM(kPrefix << "Unable to process radar scan, no trigger message received!");
     trigger_stamp = ros::TIME_MIN;
   }
-
   mutex_.unlock();
 }
 

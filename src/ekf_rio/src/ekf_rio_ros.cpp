@@ -160,12 +160,14 @@ void EkfRioRos::runFromRosbag(const std::string& rosbag_path,
         callbackIMU(imu_msg_bag);
       }
     }
+
     else if (topic == config_.topic_baro_altimeter)
     {
       const auto baro_msg = m.instantiate<sensor_msgs::FluidPressure>();
       if (baro_msg != NULL)
         callbackBaroAltimter(baro_msg);
     }
+
     else if (topic == config_.topic_radar_scan)
     {
       const auto radar_scan = m.instantiate<sensor_msgs::PointCloud2>();
@@ -202,19 +204,19 @@ void EkfRioRos::runFromRosbag(const std::string& rosbag_path,
           pub_ground_truth_twist_body_.publish(msg);
       }
     }
-
+    
     iterate();
     ros::spinOnce();
   }
 
   publish();
-
   printStats();
 }
 
 void EkfRioRos::iterate()
 {
   mutex_.lock();
+  // imu 
   if (queue_imu_.size() > 0)
   {
     imu_data_ = queue_imu_.front();
@@ -303,6 +305,7 @@ void EkfRioRos::iterate()
           queue_radar_trigger_.pop();
         }
       }
+      
       else if (std::fabs(time_diff_filter - radar_trigger_to_clone_delay) < imu_data_.dt)
       {
         // compensate for the radar frame time ("exposure time" of the radar scan) --> center clone on radar scan
@@ -311,6 +314,7 @@ void EkfRioRos::iterate()
         ekf_rio_filter_.addRadarStateClone(radar_trigger_msg.stamp);
         queue_radar_trigger_.pop();
       }
+
       else if (time_diff_filter - radar_trigger_to_clone_delay > imu_data_.dt)
       {
         ROS_ERROR_STREAM(kStreamingPrefix << "Radar trigger too old, " << time_diff_filter * 1.0e3
