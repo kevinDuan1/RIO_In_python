@@ -52,6 +52,9 @@ bool EkfRioFilter::init(const std::vector<ImuDataStamped>& imu_init_vec, const R
 
   T_b_r_.translation() = init_struct_.l_b_r_0;
   T_b_r_.linear()      = Matrix3(init_struct_.q_b_r_0);
+  
+  ROS_INFO_STREAM("T_b_r_ init" << init_struct_.l_b_r_0);
+  ROS_INFO_STREAM("TBR init" << Matrix3(init_struct_.q_b_r_0));
 
   ROS_INFO_STREAM(kStreamingPrefix << "Initialized w_bias: " << EulerAngles(bias_.gyro).to_degrees().transpose());
 
@@ -74,6 +77,9 @@ bool EkfRioFilter::propagate(const ImuDataStamped& imu)
 
   const Matrix Phi = getPhi(a_b_ib_corrected, imu.dt);
   const Matrix G   = system_noise_.getG(nav_sol_.getC_n_b(), error_idx_, covariance_.rows());
+
+  ROS_INFO_STREAM('a_b_ib_corrected' << a_b_ib_corrected.x() << a_b_ib_corrected.y() << a_b_ib_corrected.z());
+  ROS_INFO_STREAM('w_b_ib_corrected' << w_b_ib_corrected.x() << w_b_ib_corrected.y() << w_b_ib_corrected.z());
 
   // TODO: consider more efficient implementation!!
   covariance_ = Phi * covariance_ * Phi.transpose() + G * system_noise_.getQ(imu.dt) * G.transpose();

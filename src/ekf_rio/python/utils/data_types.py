@@ -75,6 +75,11 @@ class NavigationSolution:
     def get_velocity_ros(self):
         return np.array([self.v_n_b[0], -self.v_n_b[1], -self.v_n_b[2]])
 
+    def get_v(self, T):
+        return T @ self.v_n_b
+    
+    def get_p(self, T):
+        return T @ self.pose_n_b[:3, 3]
 
 class InitStruct:
     def __init__(self):
@@ -98,8 +103,9 @@ class InitStruct:
         self.b_w_0 = np.deg2rad(np.array([config.b_0_w_x_deg, config.b_0_w_y_deg, config.b_0_w_z_deg]))
         self.b_alt_0 = config.b_0_alt
         self.l_b_r_0 = np.array([config.l_b_r_x, config.l_b_r_y, config.l_b_r_z])
+        self.q_b_r_0 = np.array([config.q_b_r_x, config.q_b_r_y, config.q_b_r_z, config.q_b_r_w])
         self.P_kk_0 = np.eye(error.base_state_length)
-
+        
         np.fill_diagonal(self.P_kk_0[error.position:error.position+3, error.position:error.position+3], np.array([1, 1, 1]) * np.power(config.sigma_p, 2))
 
         np.fill_diagonal(self.P_kk_0[error.velocity:error.velocity+3, error.velocity:error.velocity+3], np.array([1, 1, 1]) * np.power(config.sigma_v, 2))
@@ -202,8 +208,10 @@ class Strapdown:
         
         new_q_vec = q_n_b_vec + (k_1 + 2 * k_2 + 2 * k_3 + k_4) * dt / 6
         q_n_b = R.from_quat(np.array([new_q_vec[1], new_q_vec[2], new_q_vec[3], new_q_vec[0]])).as_quat()
+        # print('new_q_vec', new_q_vec)
+        # print('q_n_b', q_n_b)
         # propagate velocity using Simpson's rule
-        q_b1_b = R.from_quat(q_n_b_prev).as_matrix() @ np.linalg.inv(R.from_quat(q_n_b).as_matrix())
+        q_b1_b = R.from_quat(q_n_b_prev).as_matrix() @ R.from_quat(q_n_b).as_matrix().T
         C_b1_b = q_b1_b
         
         s_l = (a_b_ib + 4 * (a_b_ib + 0.5 * (C_b1_b - np.eye(3)) @ a_b_ib) + (a_b_ib + (C_b1_b - np.eye(3)) @ a_b_ib)) * dt / 6
@@ -215,6 +223,11 @@ class Strapdown:
         y_l = (4 * v_01 + s_l) * dt / 6
         p_n1_n = v_n_b_prev * dt + C_n_b_prev.dot(y_l) + 0.5 * self.local_gravity_ * dt**2
         p_n_b = nav_sol_prev.get_position_n_b() + p_n1_n
+        
+        # print('p_n_b ', p_n_b)
+        # print('v_n_b ', v_n_b)
+        # print('q_n_b ', q_n_b)
+
         return NavigationSolution(p_n_b=p_n_b, q_n_b=q_n_b, v_n_b=v_n_b)
         
     def getQLeftMatrix(self, v):
@@ -230,8 +243,8 @@ class ImuDataStamped:
             self.time_stamp = imu_msg.header.stamp
             self.frame_id = imu_msg.header.frame_id
             self.dt = dt
-            self.a_b_ib = [imu_msg.linear_acceleration.x, imu_msg.linear_acceleration.y, imu_msg.linear_acceleration.z]
-            self.w_b_ib = [imu_msg.angular_velocity.x, imu_msg.angular_velocity.y, imu_msg.angular_velocity.z]
+            self.a_b_ib = np.array([imu_msg.linear_acceleration.x, imu_msg.linear_acceleration.y, imu_msg.linear_acceleration.z])
+            self.w_b_ib = np.array([imu_msg.angular_velocity.x, imu_msg.angular_velocity.y, imu_msg.angular_velocity.z])
         else:
             self.time_stamp = time_stamp
             self.frame_id = frame_id
@@ -250,7 +263,6 @@ class ImuDataStamped:
         imu_msg.linear_acceleration.z = self.a_b_ib[2]
         return imu_msg
     
-
 class BaroAltimeter:
     def __init__(self):
         self.kPrefix = "[BaroAltimeter]: "

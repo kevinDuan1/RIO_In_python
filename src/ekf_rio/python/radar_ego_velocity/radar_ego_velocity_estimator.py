@@ -59,14 +59,14 @@ class RadarEgoVelocityEstimator:
         return success, inlier_radar_msg
     
     # there is conversion between pcl and std point clouds in roscpp
-    def estimate3(self, radar_scan_msg, v_r, sigma_v_r, inlier_radar_msg):
+    def estimate3(self, radar_scan_msg, v_r, sigma_v_r):
         P_v_r = np.eye(3)
         radar_scan_inlier = []
         success = self.estimate4(radar_scan_msg, v_r, P_v_r, radar_scan_inlier)
         inlier_radar_msg = pclToPcl2msg(radar_scan_inlier, radar_scan_msg.header)[0]
-        sigma_v_r[0] = P_v_r[0][0]
-        sigma_v_r[1] = P_v_r[1][1]
-        sigma_v_r[2] = P_v_r[2][2]
+        sigma_v_r[0] = np.sqrt(P_v_r[0][0])
+        sigma_v_r[1] = np.sqrt(P_v_r[1][1])
+        sigma_v_r[2] = np.sqrt(P_v_r[2][2])
         return success, inlier_radar_msg
 
     def estimate4(self, rdar_scan_msg, v_r, P_v_r, inlier_radar, C_stab_r = np.eye(3)):

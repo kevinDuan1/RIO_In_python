@@ -66,6 +66,7 @@ Strapdown::propagate(const NavigationSolution nav_sol_prev, const Vector3 a_b_ib
   const Vector3 p_n1_n = v_n_b_prev * dt + C_n_b_prev * y_l + 0.5 * local_gravity_ * dt * dt;
   const Vector3 p_n_b  = Vector3(nav_sol_prev.getPosition_n_b() + p_n1_n);
 
+  
   return NavigationSolution(p_n_b, q_n_b, v_n_b);
 }
 

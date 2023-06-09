@@ -80,10 +80,13 @@ class EKF_RIO:
                 
                 if (1.0 / (self.imu_data_.time_stamp - self.last_timestamp_pub_).to_sec() ) < self.config_.publisher_rate:
                     self.last_timestamp_pub_ = self.imu_data_.time_stamp
-                    self.ts.append(self.last_timestamp_pub_.to_sec()); self.position.append(self.ekf_rio_filter_.getNavigationSolution().get_position_n_b())
-                    self.poses.append(self.ekf_rio_filter_.getNavigationSolution().get_quaternion_n_b())
-                    self.velocity.append(self.ekf_rio_filter_.getNavigationSolution().get_velocity_ros())
-            
+                    self.ts.append(self.last_timestamp_pub_.to_sec()); 
+                    self.position.append(self.ekf_rio_filter_.getNavigationSolution().get_p(self.config_.Transfrom))
+                    self.poses.append(R.from_matrix(self.config_.Transfrom @ self.ekf_rio_filter_.getNavigationSolution().get_c_n_b()).as_quat())
+                    self.velocity.append(self.ekf_rio_filter_.getNavigationSolution().get_v(self.config_.Transfrom))
+                    # print(f'p : {self.ekf_rio_filter_.getNavigationSolution().get_p(self.config_.Transfrom)}')
+                    # print(f'v : {self.ekf_rio_filter_.getNavigationSolution().get_v(self.config_.Transfrom)}')
+
             if len(self.radar_w_queue_) > 0 and (self.radar_w_queue_[-1].time_stamp - self.radar_w_queue_[0].time_stamp).to_sec() < \
             self.config_.radar_frame_ms / 1.0e-3:
                 self.radar_w_queue_.append(self.imu_data_)
@@ -155,6 +158,7 @@ class EKF_RIO:
                         time_diff_clone = self.ekf_rio_filter_.getRadarCloneState().trigger_time_stamp.to_sec() - radar_data_msg.header.stamp.to_sec()
                         # print(np.abs(time_diff_clone))
                         if np.abs(time_diff_clone) < 1.0 / self.config_.radar_rate:
+                            
                             self.queue_radar_.pop(0)
                             w_mean = np.zeros(3)
                             if len(self.radar_w_queue_) > 0:
@@ -164,9 +168,9 @@ class EKF_RIO:
                             else:
                                 w_mean = self.imu_data_.w_b_ib
 
-                            v_r, sigma_v_r = np.zeros(3), np.eye(3) # Assuming these values are vectors
+                            v_r, sigma_v_r = np.zeros(3), np.zeros(3) # Assuming these values are vectors
 
-                            flag, inlier_radar_scan = self.radar_ego_velocity_.estimate0(radar_data_msg, v_r, sigma_v_r)
+                            flag, inlier_radar_scan = self.radar_ego_velocity_.estimate3(radar_data_msg, v_r, sigma_v_r)
                             
                             if flag:
                                 valid = False
@@ -183,7 +187,6 @@ class EKF_RIO:
 
     def initIMU(self, imu_data):
         self.imu_init_.append(imu_data)
-
         T_init_so_far = self.imu_init_[-1].time_stamp.to_sec()- self.imu_init_[0].time_stamp.to_sec()
         
         if T_init_so_far > self.config_.T_init:

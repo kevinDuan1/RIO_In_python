@@ -49,5 +49,6 @@ private:
   Eigen::Matrix4d getQLeftMatrix(const Vector4& v);
 
   Vector3 local_gravity_;
+  
 };
 }  // namespace rio

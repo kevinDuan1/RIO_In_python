@@ -96,7 +96,6 @@ struct SystemNoisePsd
     G.block(error.bias_acc, 6, 3, 3)  = Matrix3::Identity();
     G.block(error.bias_gyro, 9, 3, 3) = Matrix3::Identity();
     G(error.bias_alt, 12)             = 1;
-
     return G;
   }
 

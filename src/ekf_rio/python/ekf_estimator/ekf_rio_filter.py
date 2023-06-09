@@ -30,7 +30,9 @@ class EkfRioFilter:
             w_accu += imu_data.w_b_ib
         acc_mean = a_accu / len(imu_init_vec)
         w_mean = w_accu / len(imu_init_vec)
+
         roll_pitch = initFromAcc(acc_mean, self.init_struct_.gravity)
+        # print('roll_pitch : ', np.rad2deg(roll_pitch))
         self.nav_sol_.set_euler_n_b(np.array([roll_pitch[0], roll_pitch[1], self.init_struct_.yaw_0]))
         
         #init bias
@@ -39,14 +41,17 @@ class EkfRioFilter:
         self.bias_.gyro = w_mean + self.init_struct_.b_w_0 if self.init_struct_.omega_calibration else self.init_struct_.b_w_0
         self.bias_.alt = baro_h0
 
+        # print('w_mean : ', w_mean, 'bw0', self.init_struct_.b_w_0)
         # init T_b_r
         self.T_b_r_ = np.identity(4)
         self.T_b_r_[:3, 3] = self.init_struct_.l_b_r_0
         self.T_b_r_[:3, :3] = R.from_quat(self.init_struct_.q_b_r_0).as_matrix() 
+        # print('T_b_r', self.T_b_r_)
         self.covariance_ = self.init_struct_.P_kk_0
- 
+
+
         self.strapdown_ = Strapdown(self.init_struct_.gravity)
-        self.system_noise_ = SystemNoisePsd()
+        self.system_noise_ = SystemNoisePsd()   
         self.system_noise_.configure(self.config_)
         self.time_stamp_ = imu_init_vec[-1].time_stamp   
         self.radar_clone_state_ = RadarCloneState()  
@@ -74,7 +79,7 @@ class EkfRioFilter:
         F[self.error_idx_.attitude:self.error_idx_.attitude+3, self.error_idx_.bias_gyro:self.error_idx_.bias_gyro+3] = -self.nav_sol_.get_c_n_b()
 
         Phi = np.eye(self.covariance_.shape[0], self.covariance_.shape[1])
-        Phi[0:F.shape[0], 0:F.shape[1]] = Phi[0:F.shape[0], 0:F.shape[1]] + F * T
+        Phi[0:F.shape[0], 0:F.shape[1]] += F * T
 
         return Phi
     
@@ -106,6 +111,7 @@ class EkfRioFilter:
         self.bias_.alt -= x_error[self.error_idx_.bias_alt]
         self.T_b_r_[:3,3] -= x_error[self.error_idx_.l_b_r:self.error_idx_.l_b_r+3]
         self.T_b_r_[:3,:3] = R.from_quat(self.getCorrectedQuaternion(x_error[self.error_idx_.eul_b_r:self.error_idx_.eul_b_r+3], R.from_matrix(self.T_b_r_[:3, :3]).as_quat())).as_matrix()
+        
         if self.covariance_.shape[0] > self.error_idx_.base_state_length:
             self.radar_clone_state_.nav_sol.set_position_n_b(self.radar_clone_state_.nav_sol.get_position_n_b() - x_error[self.error_idx_.sc_position:self.error_idx_.sc_position+3])
             self.radar_clone_state_.nav_sol.v_n_b -= x_error[self.error_idx_.sc_velocity:self.error_idx_.sc_velocity+3]
@@ -179,9 +185,21 @@ class EkfRioFilter:
         C_b_r = self.getRadarCloneState().T_b_r[:3,:3]
         l_b_br = self.getRadarCloneState().T_b_r[:3,3]
 
+        # print('Cnb', C_n_b)
+        # print('C_b_r', C_b_r)
+        # print('lbbr', l_b_br)
+
         v_w = skewVec(w - self.getRadarCloneState().offset_gyro) @ l_b_br
         v_n_b = self.getRadarCloneState().nav_sol.v_n_b
         v_b = C_n_b.T @ v_n_b
+        
+    
+        # print('----------')
+        # print(v_w)
+        # print(v_n_b)     
+        # print(self.nav_sol_.v_n_b)
+        # print(v_b)
+        # print('++++++++++')
 
         H_v = C_b_r.T @ C_n_b.T
         H_q = C_b_r.T @ C_n_b.T @ skewVec(v_n_b)
@@ -205,6 +223,10 @@ class EkfRioFilter:
         r = v_r_filter - v_r
         R_diag = sigma_v_r ** 2
 
+        # print(f'v_r_filter {v_r_filter}')
+        # print(f'r : {r}')
+        # print(f'R_diag : {R_diag}')
+        
         # outlier rejection
         if outlier_rejection_thresh > 0.001:
             gamma = r.T @ np.linalg.inv(H @ self.covariance_ @ H.T + np.diag(R_diag)) @ r
